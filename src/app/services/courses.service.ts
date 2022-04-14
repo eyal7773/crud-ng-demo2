@@ -18,9 +18,15 @@ export class CoursesService {
     return this.http.get(`${this.server}/courses`);
   }
 
+  // GET Single course
+  getSingleCourse(id:number) {
+    return this.http.get(`${this.server}/courses/${id}`);
+  }
+
+
   // POST ( create )
   postCourse(course:Course) { 
-    return this.http.post(`${this.server}/courses`,JSON.stringify(course));
+    return this.http.post(`${this.server}/courses`,course);
   }
 
 
@@ -30,7 +36,7 @@ export class CoursesService {
   }
   // PUT ( update )
   updateCourse(id:number, course:Course) {
-    return this.http.put(`${this.server}/courses/${id}`,JSON.stringify(course));
+    return this.http.put(`${this.server}/courses/${id}`,course);
   }
 
 }

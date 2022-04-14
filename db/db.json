@@ -1,4 +1,15 @@
 {
+  "users" : [
+    { "id": 1, 
+      "email":"abc@gmail.com",
+      "password": "a12345"
+    },
+    { "id": 2, 
+      "email":"abdel@jalal.com",
+      "password": "djshfjkljsdklfjklsdfjlsdjfl"
+    }
+  ],
+
   "courses": [
     {
       "id": 1,
@@ -10,7 +21,7 @@
     },
     {
       "id": 2,
-      "name": "Symon",
+      "name": "Symon1112",
       "desc": "Squirrel, african bush",
       "isActive": false,
       "price": 29,
@@ -303,6 +314,10 @@
       "isActive": false,
       "price": 41,
       "updatedAt": "1639252498"
+    },
+    {
+      "name": "BZZZZZ",
+      "id": 41
     }
   ]
 }

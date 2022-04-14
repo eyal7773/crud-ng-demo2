@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UsersService } from 'src/app/services/users.service';
 
 export interface MenuItem {
   title:string;
@@ -15,7 +17,8 @@ export class MenuComponent implements OnInit {
 
   items:MenuItem[] = [];
 
-  constructor() {
+  constructor(private router:Router,
+              public _usersService:UsersService) {
 
     this.setMenuItems();
 
@@ -27,6 +30,11 @@ export class MenuComponent implements OnInit {
   setMenuItems() {
     this.items.push({title:'Home', link:'dashboard'});
     this.items.push({title:'Courses', link:'courses'});
+  }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['login'])
   }
 
 

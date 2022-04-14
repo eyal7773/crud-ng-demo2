@@ -1,1 +1,108 @@
-<p>edit-course works!</p>
+
+<div class="row">
+    <div class="col-8 offset-2">
+        <h2>Edit Course</h2>
+        
+        <form  #f="ngForm" (ngSubmit)="onSubmit(f.value)" >
+           <!--
+                   id:number;
+    name:string;
+    desc:string;
+    price:number;
+    updatedAt:Date;
+    isActive:boolean;   
+           --> 
+
+           <div class="mb-3">
+               <label for="id" class="form-label">Id</label>
+               <input 
+               disabled
+               class="form-control"
+               ngModel
+               [(ngModel)]="course.id"
+               name="id"
+               type="text">
+           </div>
+           <div class="mb-3">
+               <label for="name" class="form-label">Name</label>
+               <input 
+               class="form-control"
+               ngModel
+               #name="ngModel"
+               [(ngModel)]="course.name"
+               name="name"
+               required
+               minlength="3"
+               type="text">
+
+               <div class="text-danger" *ngIf="name.invalid">
+                    Course name is required! and must be at least 3 charcters.
+               </div>
+           </div>
+
+
+        <div class="mb-3">
+            <label for="desc" class="form-label">Description</label>
+            <input 
+            class="form-control"
+            ngModel
+            #desc="ngModel"
+            [(ngModel)]="course.desc"
+            name="desc"
+            type="text">
+        </div>
+
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input 
+            class="form-control"
+            ngModel
+            #price="ngModel"
+            [(ngModel)]="course.price"
+            name="price"
+            required
+            min="10"
+            type="number">
+
+            <div class="text-danger" *ngIf="price.invalid">
+                Price is required! and must be more than 10.
+           </div>
+        </div>
+
+        <button class="btn btn-primary" >Save Course</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
